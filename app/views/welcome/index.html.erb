@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+    <div class="span12"><h1>Simple player</h1></div>
+    <div class="span4">
+      <div id='navigator'>
+        <input type='submit' class='next btn btn-success' value='next' />
+        <input type='submit' class='prev btn btn-success' value='prev' />
+        <input type='submit' class='pause btn btn-warning' value='pause' />
+      </div>
+      <div id='file-selector'>
+          <input type='file' class='fileinput' multiple />
+      </div>
+    </div>
+
+    <div class="span8">
+      <div id='playlist'></div>
+    </div>
+  </div>
+
+</div>
+
+<br/>
+<br/>
+<div class='templates'>
+  <script type='text/template' data-name='playlist'>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <%% for (var i = 0, max = list.length; i < max; i++) { %>
+        <tr data-name='<%%= list[i].name %>'>
+          <td>
+            <%%= list[i].name %>
+          </td>
+          <td>
+            <span class='play'>[>]<span>
+          </td>
+          <td>
+            <span class='remove'>[X]</span>
+          </td>
+        <%% } %>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+</div>
